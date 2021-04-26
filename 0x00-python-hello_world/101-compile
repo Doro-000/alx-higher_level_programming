@@ -1,2 +1,6 @@
 #!/bin/bash
-echo "import $PYFILE" | python3
+FILENAME=${PYFILE%.*}
+echo "import $FILENAME" | python3
+cp __pycache__/*.pyc .
+mv *.pyc "${FILENAME}.pyc"
+rm -r __pycache__/

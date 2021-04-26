@@ -25,7 +25,7 @@ int check_cycle(listint_t *list)
 		first = first->next;
 		if (second->next == NULL)
 			break;
-		second = second->next;
+		second = (second->next)->next;
 	}
 	return (0);
 }

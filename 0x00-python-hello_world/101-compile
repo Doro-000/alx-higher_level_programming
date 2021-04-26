@@ -1,6 +1,2 @@
 #!/bin/bash
-FILENAME=${PYFILE%.*}
-echo "import $FILENAME" | python3
-cp __pycache__/*.pyc .
-mv *.pyc "${FILENAME}.pyc"
-rm -r __pycache__/
+python3 -m compileall -b $PYFILE

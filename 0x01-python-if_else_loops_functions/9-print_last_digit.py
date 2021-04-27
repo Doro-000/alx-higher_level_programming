@@ -3,4 +3,4 @@
 
 def print_last_digit(number):
     print("{:n}".format(number % 10), end="")
-    return number % 10
+    return (number % 10)

@@ -3,6 +3,7 @@
 /**
  * insert_node - inserts a node in a sorted linked list
  * @head: head of list to be used
+ * @number: content of the node
  *
  * Return: address of the node inserted, NULL otherwise
  */
@@ -32,7 +33,6 @@ listint_t *insert_node(listint_t **head, int number)
 			*head = new;
 			new->next = current;
 			return (new);
-      
 		}
 		else if (current->n >= number)
 		{
@@ -44,5 +44,5 @@ listint_t *insert_node(listint_t **head, int number)
 		current = current->next;
 	}
 	prev->next = new;
-	return(new);
+	return (new);
 }

@@ -9,8 +9,8 @@ if __name__ == "__main__":
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
     operator = sys.argv[2]
-    operand_1 = sys.argv[1]
-    operand_2 = sys.argv[3]
+    operand_1 = int(sys.argv[1])
+    operand_2 = int(sys.argv[3])
     result = None
     if operator == '+':
         result = add(operand_1, operand_2)

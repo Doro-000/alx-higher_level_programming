@@ -10,8 +10,8 @@ def add_tuple(tuple_a=(), tuple_b=()):
         except:
             pass
         try:
-           sum_temp += tuple_b[i]
+            sum_temp += tuple_b[i]
         except:
-               pass
+            pass
         result.append(sum_temp)
     return tuple(result)

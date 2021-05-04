@@ -51,7 +51,7 @@ int is_palindrome(listint_t **head)
 		cursor = cursor->next;
 	for (i = 0; i < size / 2; i++)
 	{
-		sum_h2 = cursor->n;
+		sum_h2 += cursor->n;
 		cursor = cursor->next;
 	}
 	if (sum_h1 == sum_h2)

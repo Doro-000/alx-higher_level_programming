@@ -40,7 +40,7 @@ int is_palindrome(listint_t **head)
 	if (cursor == NULL)
 		return (1);
 	size = list_len(cursor);
-	if (size == 1):
+	if (size == 1)
 		return (1);
 	for (i = 0; i < size / 2; i++)
 	{

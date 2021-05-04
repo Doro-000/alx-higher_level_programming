@@ -30,8 +30,9 @@ int list_len(listint_t *h)
 int is_palindrome(listint_t **head)
 {
 	listint_t *cursor = NULL;
-	int *elements = NULL;
 	int size, i;
+	int sum_h1 = 0;
+	int sum_h2 = 0;
 
 	if (head == NULL)
 		return (0);
@@ -39,22 +40,21 @@ int is_palindrome(listint_t **head)
 	if (cursor == NULL)
 		return (1);
 	size = list_len(cursor);
-	elements = malloc(sizeof(*elements) * size);
-	if (elements == NULL)
-		return (0);
-	for (i = 0; i < size; i++)
+	if (size == 1):
+		return (1);
+	for (i = 0; i < size / 2; i++)
 	{
-		elements[i] = cursor->n;
+		sum_h1 += cursor->n;
 		cursor = cursor->next;
 	}
-	for (i = 0; i < size; i++, size--)
+	if (size % 2 != 0)
+		cursor = cursor->next;
+	for (i = 0; i < size / 2; i++, size--)
 	{
-		if (elements[i] != elements[size - 1])
-		{
-			free(elements);
-			return (0);
-		}
+		sum_h2 = cursor->n;
+		cursor = cursor->next;
 	}
-	free(elements);
-	return (1);
+	if (sum_h1 == sum_h2)
+		return (1);
+	return (0);
 }

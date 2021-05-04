@@ -49,7 +49,7 @@ int is_palindrome(listint_t **head)
 	}
 	if (size % 2 != 0)
 		cursor = cursor->next;
-	for (i = 0; i < size / 2; i++, size--)
+	for (i = 0; i < size / 2; i++)
 	{
 		sum_h2 = cursor->n;
 		cursor = cursor->next;

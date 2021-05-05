@@ -1,6 +1,7 @@
 #include "lists.h"
 
 int list_len(listint_t *);
+listint_t *reverse_listint(listint_t **);
 
 /**
  * list_len - counts the number of nodes in a linked list
@@ -22,6 +23,31 @@ int list_len(listint_t *h)
 }
 
 /**
+ * reverse_listint - reverses a linked list
+ * @head: head of the list
+ *
+ * Return: the first node of the reversed node
+ */
+listint_t *reverse_listint(listint_t **head)
+{
+	listint_t *next_node = NULL;
+	listint_t *prev_node = NULL;
+
+	if (head == NULL)
+		return (NULL);
+	while (*head != NULL)
+	{
+		next_node = (*head)->next;
+		(*head)->next = prev_node;
+		prev_node = *head;
+		*head = next_node;
+	}
+	*head = prev_node;
+	return (*head);
+}
+
+
+/**
  * is_palindrome - checks if a linked list is a palindrome
  * @head: head of the list
  *
@@ -30,31 +56,27 @@ int list_len(listint_t *h)
 int is_palindrome(listint_t **head)
 {
 	listint_t *cursor = NULL;
-	int size, i, j;
-	int bin_1 = 0;
-	int bin_2 = 0;
+	listint_t *cursor_2 = NULL;
+	int size, i;
 
 	if (head == NULL)
 		return (0);
 	cursor = *head;
+	cursor_2 = *head;
 	if (cursor == NULL)
-	    return (1);
-	size = list_len(cursor);
-	if (size == 1)
 		return (1);
+	size = list_len(*head);
 	for (i = 0; i < size / 2; i++)
-	{
-		bin_1 ^= cursor->n;
 		cursor = cursor->next;
-	}
 	if (size % 2 != 0)
 		cursor = cursor->next;
-	for (j = 0; j < size / 2; j++)
+	cursor = reverse_listint(&cursor);
+	for (i = 0; i < size / 2; i++)
 	{
-		bin_2 ^= cursor->n;
+		if (cursor_2->n != cursor->n)
+			return (0);
+		cursor_2 = cursor_2->next;
 		cursor = cursor->next;
 	}
-	if (bin_1 == bin_2)
-		return (1);
-	return (0);
+	return (1);
 }

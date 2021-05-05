@@ -49,9 +49,10 @@ int is_palindrome(listint_t **head)
 	}
 	if (size % 2 != 0)
 		cursor = cursor->next;
+	i--;
 	for (j = 0; j < size / 2; j++, i--)
 	{
-		if (elements[j] != cursor->n)
+		if (elements[i] != cursor->n)
 		{
 			free(elements);
 			return(0);

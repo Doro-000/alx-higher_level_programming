@@ -2,9 +2,10 @@
 
 
 def print_matrix_integer(my_list=[[]]):
-    if (not my_list) or (not mylist[0]):
-        print("")
+    if not my_list:
         return None
+    if not my_list[0] and len(my_list) == 0:
+        print("")
     for row in my_list:
         for element in range(len(row)):
             if element < len(row)-1:

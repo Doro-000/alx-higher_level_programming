@@ -3,7 +3,7 @@
 
 def print_matrix_integer(my_list=[[]]):
     if (not my_list) or (not mylist[0]):
-        print("");
+        print("")
         return None
     for row in my_list:
         for element in range(len(row)):

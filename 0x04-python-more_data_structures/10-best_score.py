@@ -4,6 +4,5 @@
 def best_score(a_dictionary):
     if not a_dictionary:
         return None
-    greatest = list(a_dictionary.values())[0]
-    compare = lambda a: a_dictionary[a] > greatest
-    return list(filter(compare, a_dictionary.keys())[-1]
+    g = list(a_dictionary.values())[0]
+    return list(filter(lambda a: a_dictionary > g, a_dictionary.keys())[-1]

@@ -4,12 +4,10 @@
 
 class Square():
     """square class with it's size and proper validation"""
-    __size = None
-    __position = None
 
     def __init__(self, size, position=(0, 0)):
-        self.size = size
-        self.position = position
+        self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -43,7 +41,7 @@ class Square():
         return self.__size ** 2
 
     def my_print(self):
-        if not self.size:
+        if not self.__size:
             print("")
-        for i in range(self.size):
-            print(" " * self.position[0] + "#" * self.size)
+        for i in range(self.__size):
+            print(" " * self.__position[0] + "#" * self.__size)

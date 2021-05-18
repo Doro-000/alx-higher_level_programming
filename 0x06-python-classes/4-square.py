@@ -4,7 +4,6 @@
 
 class Square():
     """square class with it's size and proper validation"""
-    __size = None
 
     def __init__(self, size):
         self.__size = size

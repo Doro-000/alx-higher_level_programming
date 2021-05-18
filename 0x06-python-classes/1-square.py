@@ -3,13 +3,7 @@
 
 
 class Square():
-    """Class representing a square
-    
-       Attributes:
-            size (int): private attribute, size of the quare
-    """
-
-    __size = None
+    """Class representing a square"""
 
     def __init__(self, size):
         """ initialize the class

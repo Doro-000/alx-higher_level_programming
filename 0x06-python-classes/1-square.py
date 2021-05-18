@@ -1,11 +1,20 @@
 #!/usr/bin/python3
-"""Square class to represent a square"""
+""" Working on oop with python """
 
 
 class Square():
-    """square class with it's size """
+    """Class representing a square
+    
+       Attributes:
+            size (int): private attribute, size of the quare
+    """
 
     __size = None
 
     def __init__(self, size):
+        """ initialize the class
+
+        Args:
+           size (int): size of the square
+        """
         self.__size = size

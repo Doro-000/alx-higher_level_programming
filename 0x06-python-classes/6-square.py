@@ -5,9 +5,7 @@
 class Square():
     """square class with it's size and proper validation"""
 
-    def __init__(self, size, position=(0, 0)):
-        self.__size = None
-        self.__position = None
+    def __init__(self, size=0, position=(0, 0)):
         self.size = size
         self.position = position
 
@@ -37,7 +35,7 @@ class Square():
             raise TypeError("position must be a tuple of 2 positive integers")
         elif (type(value[1]) is not int) or (value[1] < 0):
             raise TypeError("position most be a tuple of 2 positive integers")
-        self.__positiion - value
+        self.__position = value
 
     def area(self):
         return self.size ** 2

@@ -52,17 +52,23 @@ class Square():
         """print the square"""
         if self.size == 0:
             print()
-        for i in range(self.size):
-            print(" " * self.position[0], end="") 
-            print("#" * self.size)
+        else:
+            for i in range(self.position[1]):
+                print("")
+            for i in range(self.size):
+                print(" " * self.position[0], end="")
+                print("#" * self.size)
 
     def __str__(self):
         """print the square"""
 
-        result=""
+        result = ""
         if self.size == 0:
             print()
-        for i in range(self.size):
-            result +=  ((" " * self.position[0]) + ("#" * self.size))
-            result += '\n'
+        else:
+            for i in range(self.position[1]):
+                result += '\n'
+            for i in range(self.size):
+                result += ((" " * self.position[0]) + ("#" * self.size))
+                result += '\n'
         return result

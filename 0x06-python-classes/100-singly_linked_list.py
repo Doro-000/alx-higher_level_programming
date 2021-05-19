@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-
+"""Classes to implement a linked list"""
 
 
 class Node():
+    """Class to implement a Node"""
     def __init__(self, data, next_node=None):
         self.data = data
         self.next_node = next_node
@@ -29,6 +30,7 @@ class Node():
 
 
 class SinglyLinkedList():
+    """Class to implement a singly linked list"""
     def __init__(self):
         self.__head = None
     def sorted_insert(self, value):

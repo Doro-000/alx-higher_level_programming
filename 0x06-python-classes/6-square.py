@@ -52,7 +52,7 @@ class Square():
         """print the square"""
         if self.size == 0:
             print()
-        for i in range(position[1]):
+        for i in range(self.position[1]):
             print("")
         for i in range(self.size):
             print(" " * self.position[0], end="") 

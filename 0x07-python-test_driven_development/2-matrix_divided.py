@@ -24,7 +24,7 @@ def matrix_divided(matrix, div):
                 raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
     for i in range(len(matrix)):
         temp = []
-        for j in range(len(row_length)):
+        for j in range(row_length):
             temp.append(round(matrix[i][j] / 3, 2))
         new_matrix.append(temp)
     return new_matrix

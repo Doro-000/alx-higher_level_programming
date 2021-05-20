@@ -8,8 +8,10 @@ def matrix_divided(matrix, div):
                  @matrix: matrix to be divided
                  @div: dividend
     """
-    if div == 0:
+    if type(div) not in [int, float]:
         raise TypeError("div must be a number")
+    if div == 0:
+        raise ZeroDivisionError("division by zero")
     if len(matrix) == 0:
         return
     new_matrix = []

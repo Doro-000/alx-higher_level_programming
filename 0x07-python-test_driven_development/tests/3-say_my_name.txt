@@ -2,7 +2,7 @@
 >>> say_my_name("abebe", "beso")
 My name is abebe beso
 >>> say_my_name("chala")
-My name is chala
+My name is chala 
 >>> say_my_name(5)
 Traceback (most recent call last):
     ...

@@ -25,6 +25,6 @@ def matrix_divided(matrix, div):
     for i in range(len(matrix)):
         temp = []
         for j in range(row_length):
-            temp.append(round(matrix[i][j] / 3, 2))
+            temp.append(round(matrix[i][j] / div, 2))
         new_matrix.append(temp)
     return new_matrix

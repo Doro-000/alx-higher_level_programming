@@ -7,7 +7,7 @@ def print_square(size):
         Arguments:
                  @size: size of the square
     """
-    if type(size) is not itn:
+    if type(size) is not int:
         raise TypeError("size must be an integer")
     if size < 0:
         raise ValueError("size must be >= 0")
@@ -18,4 +18,3 @@ def print_square(size):
             print("#", end="")
         if (i != size - 1):
             print()
-        

@@ -19,5 +19,13 @@ class TestMaxInteger(unittest.TestCase):
         """test empty input"""
         self.assertEqual(max_integer([]), None)
 
+    def test_ImproperInput(self):
+        """test improper input"""
+        with self.assertRaises(TypeError):
+            max_integer(None)
+            max_integer(["a", 3, 2.0])
+            max_integer([[1, 2], 6])
+            max_integer([{1, 2}, 6])
+
 if __name__ == "__main__":
     unittest.main()

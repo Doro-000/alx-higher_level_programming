@@ -4,10 +4,15 @@
 def text_indentation(text):
     if type(text) is not str:
         raise TypeError("text must be a string")
-    result = []
+    text = text.strip()
+    if len(text) == 0:
+        return
+    temp = text[0]
+    delims = ['.', ':', '?']
     for char in text:
-        result.append(char)
-        if char in ['.', '?', ':']:
-            result.append("\n\n")
-    print("".join(result), end="")
-    
+        if char == ' ' and temp in delims:
+            continue
+        temp = char
+        print(char, end="")
+        if char in delims:
+            print("\n\n", end="")    

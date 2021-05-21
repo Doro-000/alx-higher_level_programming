@@ -54,7 +54,6 @@ chala.
 <BLANKLINE>
 >>> text_indentation("")
 >>> text_indentation("\n..")
-<BLANKLINE>
 .
 <BLANKLINE>
 .

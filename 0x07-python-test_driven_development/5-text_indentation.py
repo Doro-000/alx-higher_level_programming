@@ -15,4 +15,4 @@ def text_indentation(text):
         temp = char
         print(char, end="")
         if char in delims:
-            print("\n\n", end="")    
+            print("\n\n", end="")

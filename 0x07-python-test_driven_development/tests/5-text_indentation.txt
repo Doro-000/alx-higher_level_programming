@@ -36,9 +36,7 @@ Inde sermone vario sex illa a Dipylo stadia confecimus.
 <BLANKLINE>
 Sin aliud quid voles, postea.
 <BLANKLINE>
-Quae animi affectio suum cuique tribuens atque hanc, quam dico.
-<BLANKLINE>
->>> text_indentation(".?:")
+Quae animi affectio suum cuique tribuens atque hanc, quam dico.>>> text_indentation(".?:")
 .
 <BLANKLINE>
 ?
@@ -52,15 +50,13 @@ beso     ?
 <BLANKLINE>
 bela:
 <BLANKLINE>
- jcjaja
->>> text_indentation("chala.")
+ jcjaja>>> text_indentation("chala.")
 chala.
 <BLANKLINE>
 >>> text_indentation("?")
 ?
 <BLANKLINE>
 >>> text_indentation("")
-<BLANKLINE>
 >>> text_indentation("\n..")
 <BLANKLINE>
 .

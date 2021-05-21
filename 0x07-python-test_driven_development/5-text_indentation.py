@@ -1,7 +1,12 @@
 #!/usr/bin/python3
+"""Module containing a function that prints a string in a certain format"""
 
 
 def text_indentation(text):
+    """ prints a string line by line based on delimiters
+        Arguments:
+                 @text: text to be printed
+    """
     if type(text) is not str:
         raise TypeError("text must be a string")
     text = text.strip()

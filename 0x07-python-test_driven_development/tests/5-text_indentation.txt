@@ -50,7 +50,8 @@ beso     ?
 <BLANKLINE>
 bela:
 <BLANKLINE>
- jcjaja>>> text_indentation("chala.")
+ jcjaja
+>>> text_indentation("chala.")
 chala.
 <BLANKLINE>
 >>> text_indentation("?")
@@ -63,5 +64,5 @@ chala.
 <BLANKLINE>
 .
 <BLANKLINE>
->>> text_indentaion("works i think")
+>>> text_indentation("works i think")
 works i think

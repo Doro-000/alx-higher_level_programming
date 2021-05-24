@@ -22,14 +22,17 @@ class Rectangle():
 
     @property
     def width(self):
+        """width getter"""
         return self.__width
 
     @property
     def height(self):
+        """height getter"""
         return self.__height
 
     @width.setter
     def width(self, value):
+        """width setter"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
@@ -38,6 +41,7 @@ class Rectangle():
 
     @height.setter
     def height(self, value):
+        """height setter"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
@@ -45,14 +49,17 @@ class Rectangle():
         self.__height = value
 
     def area(self):
+        """calculates area"""
         return self.__width * self.__height
 
     def perimeter(self):
+        """calculates perimeter"""
         if (not self.__width) or (not self.__height):
             return 0
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
+        """returns printed verison of rectangle"""
         rect = ""
         for i in range(self.__height):
             for j in range(self.__width):
@@ -62,8 +69,10 @@ class Rectangle():
         return rect
 
     def __repr__(self):
+        """returns eval version of rectangle"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
     def __del__(self):
+        """invoked when instance is deleted"""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")

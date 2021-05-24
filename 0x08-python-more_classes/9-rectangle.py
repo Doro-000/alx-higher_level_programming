@@ -7,6 +7,7 @@ class Rectangle():
 
     number_of_instances = 0
     print_symbol = '#'
+
     def __init__(self, width=0, height=0):
         if type(width) is not str:
             raise TypeError("width must be an integer")
@@ -81,4 +82,4 @@ class Rectangle():
 
     @classmethod
     def square(cls, size=0):
-        return cls.__init__(width = size, height = size)
+        return cls.__init__(width=size, height=size)

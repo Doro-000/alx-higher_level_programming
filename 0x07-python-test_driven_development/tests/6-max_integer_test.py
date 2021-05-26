@@ -14,6 +14,8 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([1]), 1)
         self.assertEqual(max_integer(['a', 'b', 'c']), 'c')
         self.assertEqual(max_integer([2.0, 2.1, 2.3]), 2.3)
+        self.assertEqual(max_integer([2.3, 2.1, 2.0]), 2.3)
+        self.assertEqual(max_integer([2.0, 2.3, 2.1]), 2.3)
 
     def test_EmptyInput(self):
         """test empty input"""

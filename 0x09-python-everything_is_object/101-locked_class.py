@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""module containing a class to demo a class that blocks dynamic attribute creation"""
+"""class to demo a class that blocks dynamic attribute creation"""
 
 
 class LockedClass():

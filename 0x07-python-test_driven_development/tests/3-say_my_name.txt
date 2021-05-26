@@ -17,5 +17,3 @@ Traceback (most recent call last):
 TypeError: first_name must be a string
 >>> say_my_name("", "jo")
 My name is  jo
->>> say_my_name()
-My name is  

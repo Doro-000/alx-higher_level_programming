@@ -35,3 +35,7 @@ TypeError: a must be an integer
 inf
 >>> add_integer(float('NaN'))
 nan
+>>> add_integer(2, float('NaN'))
+nan
+>>> add_integer(float('NaN'), float('NaN'))
+nan

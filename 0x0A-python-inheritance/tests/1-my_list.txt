@@ -13,3 +13,6 @@
 >>> y.append(3)
 >>> y.print_sorted()
 [3]
+>>> y.append(3)
+>>> y.print_sorted()
+[3, 3]

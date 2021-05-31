@@ -22,10 +22,16 @@
 >>> z.append(1500)
 >>> z.print_sorted()
 [1000, 1500, 2000]
+>>> print(z)
+[1000, 2000, 1500]
 >>> i = MyList()
->>> i.append(-1)
->>> i.append(-2)
->>> i.append(-3)
 >>> i.append(-4)
+>>> i.append(-2)
+>>> i.append(-1)
+>>> i.append(-3)
 >>> i.print_sorted()
 [-1, -2, -3, -4]
+>>> print(i)
+[-4, -2, -1, -3]
+
+

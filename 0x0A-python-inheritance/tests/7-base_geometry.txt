@@ -53,3 +53,36 @@ TypeError: float must be an integer
 Traceback (most recent call last):
     ...
 TypeError: float must be an integer
+>>> bg.integer_validator("valid", 1000213)
+>>> bg.integer_validator("abebe")
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+>>> bg.integer_validator("tuple", (1,))
+Traceback (most recent call last):
+    ...
+TypeError: tuple must be an integer
+>>> bg.integer_validator("tuple", (1, 2))
+Traceback (most recent call last):
+    ...
+TypeError: tuple must be an integer
+>>> bg.integer_validator("dict", {})
+Traceback (most recent call last):
+    ...
+TypeError: dict must be an integer
+>>> bg.integer_validator("dict", {"a": 1})
+Traceback (most recent call last):
+    ...
+TypeError: dict must be an integer
+>>> bg.integer_validator("dict", {"a": 1, "b": 1})
+Traceback (most recent call last):
+    ...
+TypeError: dict must be an integer
+>>> bg.integer_validator("set", {1, 2, 3})
+Traceback (most recent call last):
+    ...
+TypeError: set must be an integer
+>>> bg.integer_validator("none", None)
+Traceback (most recent call last):
+    ...
+TypeError: none must be an integer

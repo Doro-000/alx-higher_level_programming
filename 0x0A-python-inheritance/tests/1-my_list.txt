@@ -7,3 +7,9 @@
 [1, 2, 3]
 >>> x
 [3, 2, 1]
+>>> y = MyList()
+>>> y.print_sorted()
+[]
+>>> y.append(3)
+>>> y.print_sorted()
+[3]

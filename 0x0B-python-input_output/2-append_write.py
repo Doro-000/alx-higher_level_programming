@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""contains write_file"""
+"""contains append_write"""
 
 
 def append_write(filename="", text=""):

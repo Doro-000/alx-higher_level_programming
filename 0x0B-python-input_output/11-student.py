@@ -20,7 +20,7 @@ class Student():
         final_dict = {}
         for key in attrs:
             if key in self.__dict__.keys():
-                final.update({key: self.__dict__[key]})
+                final_dict.update({key: self.__dict__[key]})
         return final_dict
 
     def reload_from_json(self, json):

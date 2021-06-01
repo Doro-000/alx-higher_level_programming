@@ -17,4 +17,8 @@ class Student():
         for x in attrs:
             if type(x) is not str:
                 return self.__dict__
-        return {key: self.__dict__[key] for key in attrs if key in self.__dict__.keys()}
+        final_dict = {}
+        for key in attrs:
+            if key in self.__dict__.keys():
+                final.update({key: self.__dict__[key]})
+        return final_dict

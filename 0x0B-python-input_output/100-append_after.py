@@ -4,9 +4,7 @@
 
 def append_after(filename="", search_string="", new_string=""):
     """ inserts a line of text to a file"""
-    if type(search_string) is not str or type(new_string) is not str:
-        return
-    with open(filename, "r+") as f:
+    with open(filename, "r+", encoding="utf-8") as f:
         content = f.readlines()
         for i in range(len(content)):
             if search_string in content[i]:

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""containsclass_to_json"""
+"""contains class_to_json"""
 import json
 
 

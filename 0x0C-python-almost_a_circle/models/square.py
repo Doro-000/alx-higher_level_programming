@@ -23,14 +23,13 @@ class Square(Rectangle):
 
     def __str__(self):
         """formatted output"""
-        s = "[Square] ({}) {}/{} - {}".format(self.id, self.x,
-                                            self.y, self.width)
+        s = f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
         return s
 
     def update(self, *args, **kwargs):
         """updates a square with new values for attributes"""
         attrs = ["id", "size", "x", "y"]
-        if args != None and len(args) != 0:
+        if args is not None and len(args) != 0:
             i = 0
             while i < len(attrs) and i < len(args):
                 setattr(self, attrs[i], args[i])
@@ -45,5 +44,5 @@ class Square(Rectangle):
         rect_dict = {}
         attrs = ["id", "size", "x", "y"]
         for attr in attrs:
-            rect_dict.update({attr:getattr(self, attr)})
+            rect_dict.update({attr: getattr(self, attr)})
         return rect_dict

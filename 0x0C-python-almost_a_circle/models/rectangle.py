@@ -95,7 +95,7 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """updates a rectanlge with new properties"""
         attrs = ["id", "width", "height", "x", "y"]
-        if args != None and len(args) != 0:
+        if args is not None and len(args) != 0:
             i = 0
             while i < len(attrs) and i < len(args):
                 setattr(self, attrs[i], args[i])
@@ -110,5 +110,5 @@ class Rectangle(Base):
         rect_dict = {}
         attrs = ["id", "width", "height", "x", "y"]
         for attr in attrs:
-            rect_dict.update({attr:getattr(self, attr)})
+            rect_dict.update({attr: getattr(self, attr)})
         return rect_dict

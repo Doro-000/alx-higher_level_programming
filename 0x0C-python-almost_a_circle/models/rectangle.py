@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Contains Rectangle class"""
-from typing import Type
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):

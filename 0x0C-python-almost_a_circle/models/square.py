@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from models.rectangle import Rectangle
+"""contains Square class to represent squares"""
 
 
 class Square(Rectangle):

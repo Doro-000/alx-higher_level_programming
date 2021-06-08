@@ -1,10 +1,16 @@
 #!/usr/bin/python3
+"""Documentation for a Square class"""
+
+
 from models.rectangle import Rectangle
-"""contains Square class to represent squares"""
 
 
 class Square(Rectangle):
-    """class to represent a Square"""
+
+    """Square class that inherits from the Rectangle class
+       which in turn inherited from the Base class
+    """
+
     def __init__(self, size, x=0, y=0, id=None):
         """Instantiation of a Square object
         Args:
@@ -13,4 +19,5 @@ class Square(Rectangle):
             y (int): the y coordinate
             id (int): the id of the object
         """
+
         super().__init__(size, size, x, y, id)

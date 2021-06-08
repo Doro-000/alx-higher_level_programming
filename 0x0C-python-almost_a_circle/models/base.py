@@ -4,6 +4,7 @@ import json
 import csv
 import turtle
 
+
 class Base:
     """base class to manage ID
     Attributes:
@@ -75,7 +76,7 @@ class Base:
             writer.writeheader()
             for obj in list_objs:
                 writer.writerow(obj.to_dictionary())
-    
+
     @classmethod
     def load_from_file_csv(cls):
         """retrives a list of instances from a csv file"""

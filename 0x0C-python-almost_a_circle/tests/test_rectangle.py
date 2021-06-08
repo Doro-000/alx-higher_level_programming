@@ -23,39 +23,40 @@ class TestRectCls(unittest.TestCase):
         self.assertEqual(x.y, 10)
         self.assertEqual(x.id, 15)
 
-     def test_attrs_validation(self):
+    def test_attrs_validation(self):
         Base._Base__nb_objects = 0
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            y = Rectangle("20", 20)
+            Rectangle("20", 20)
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            y = Rectangle(20, "20")
+            Rectangle(20, "20")
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            y = Rectangle(20, 20, "x", 10)
+            Rectangle(20, 20, "x", 10)
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            y = Rectangle(20, 20, 10, "y")
+            Rectangle(20, 20, 10, "y")
         with self.assertRaises(TypeError):
-            y = Rectangle(float("NaN"), float("inf"))
-            y = Rectangle(float("inf"), float("NaN"))
-            y = Rectangle(float("NaN"), float("NaN"), float("NaN"), float("NaN"))
-            y = Rectangle(float("inf"), float("inf"), float("inf"), float("inf"))
-            y = Rectangle(None, None)
-            y = Rectangle()
-            y = Rectangle([10, 10], [10, 10], [10, 10], [10, 10])
-            y= Rectangle("abebe", "abebe", "abebe", "abebe")
+            Rectangle(float("NaN"), float("inf"))
+            Rectangle(float("inf"), float("NaN"))
+            Rectangle(float("NaN"), float("NaN"), float("NaN"), float("NaN"))
+            Rectangle(float("inf"), float("inf"), float("inf"), float("inf"))
+            Rectangle(None, None)
+            Rectangle()
+            Rectangle([10, 10], [10, 10], [10, 10], [10, 10])
+            Rectangle("abebe", "abebe", "abebe", "abebe")
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
-            y = Rectangle(-20, 20)
-            y = Rectangle(0, 20)
-            y = Rectangle(-20000000, 20)
+            Rectangle(-20, 20)
+            Rectangle(0, 20)
+            Rectangle(-20000000, 20)
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
-            y = Rectangle(20, -20)
-            y = Rectangle(20, 0)
-            y = Rectangle(20, -20000000)
+            Rectangle(20, -20)
+            Rectangle(20, 0)
+            Rectangle(20, -20000000)
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
-            y = Rectangle(10, 10, -10)
-            y = Rectangle(10, 10, -100000)
+            Rectangle(10, 10, -10)
+            Rectangle(10, 10, -100000)
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
-            y = Rectangle(10, 10, 10, -10)
-            y = Rectangle(10, 10, 10, -100000)
+            Rectangle(10, 10, 10, -10)
+            Rectangle(10, 10, 10, -100000)
+
     def test_area(self):
         Base._Base__nb_objects = 0
         x = Rectangle(10, 10)

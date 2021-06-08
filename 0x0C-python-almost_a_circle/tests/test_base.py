@@ -22,7 +22,7 @@ class TestBaseCls(unittest.TestCase):
         self.assertEqual(temp, "[]")
         temp = Base.to_json_string(None)
         self.assertEqual(temp, "[]")
-        temp2=[{'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}]
+        temp2 = [{'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}]
         temp = Base.to_json_string(temp2)
         self.assertEqual(temp, json.dumps(temp2))
         temp = Base.to_json_string([{}])
@@ -38,7 +38,7 @@ class TestBaseCls(unittest.TestCase):
         self.assertEqual(temp, [])
         temp = Base.from_json_string(None)
         self.assertEqual(temp, [])
-        temp2=[{'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}]
+        temp2 = [{'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}]
         json_str = json.dumps(temp2)
         temp = Base.from_json_string(json_str)
         self.assertEqual(temp, json.loads(json_str))

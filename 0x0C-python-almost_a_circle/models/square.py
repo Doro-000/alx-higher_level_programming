@@ -23,7 +23,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """formatted output"""
-        s = f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+        s = "[Square] ({}) {}/{} - {}".format(self.id, self.x,
+                                              self.y, self.width)
         return s
 
     def update(self, *args, **kwargs):

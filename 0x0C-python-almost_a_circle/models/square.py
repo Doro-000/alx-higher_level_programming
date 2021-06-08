@@ -8,19 +8,17 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """instantiation"""
         super().__init__(size, size, x, y, id)
-        self.size = size
 
     @property
     def size(self):
         """size attribute getter"""
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, value):
         """size attribute setter"""
         self.width = value
         self.height = value
-        self.__size = value
 
     def __str__(self):
         """formatted output"""
@@ -30,7 +28,7 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """updates a square with new values for attributes"""
-        attrs = ["id", "size", "x", "y"]
+        attrs = ["id", "width", "x", "y"]
         if args is not None and len(args) != 0:
             i = 0
             while i < len(attrs) and i < len(args):
@@ -38,6 +36,8 @@ class Square(Rectangle):
                 i += 1
         else:
             for attr in attrs:
+                if attr == "width" and "size" in kwargs.keys():
+                    setattr(self, attr, kwargs["size"])
                 if attr in kwargs.keys():
                     setattr(self, attr, kwargs[attr])
 
@@ -46,5 +46,8 @@ class Square(Rectangle):
         rect_dict = {}
         attrs = ["id", "size", "x", "y"]
         for attr in attrs:
-            rect_dict.update({attr: getattr(self, attr)})
+            if attr == "size":
+                rect_dict.update({attr: getattr(self, "width")})
+            else:
+                rect_dict.update({attr: getattr(self, attr)})
         return rect_dict

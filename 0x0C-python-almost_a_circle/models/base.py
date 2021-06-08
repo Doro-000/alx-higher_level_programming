@@ -73,15 +73,13 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """saves a list of objects to a csv file"""
         filename = "{}.csv".format(cls.__name__)
-        if list_objs is None or list_objs == []:
-            field_names = []
-        else:
-            field_names = [key for key in list_objs[0].to_dictionary()]
         with open(filename, "w", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=field_names)
-            writer.writeheader()
-            for obj in list_objs:
-                writer.writerow(obj.to_dictionary())
+            if list_objs is not None or list_objs != []:
+                field_names = [key for key in list_objs[0].to_dictionary()]
+                writer = csv.DictWriter(f, fieldnames=field_names)
+                writer.writeheader()
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):

@@ -5,6 +5,7 @@ import sys
 from models.rectangle import Rectangle
 from models.base import Base
 
+
 class TestRectCls(unittest.TestCase):
     def test_init(self):
         Base._Base__nb_objects = 0
@@ -21,7 +22,7 @@ class TestRectCls(unittest.TestCase):
         self.assertEqual(x.x, 10)
         self.assertEqual(x.y, 10)
         self.assertEqual(x.id, 15)
-        
+
      def test_attrs_validation(self):
         Base._Base__nb_objects = 0
         with self.assertRaisesRegex(TypeError, "width must be an integer"):

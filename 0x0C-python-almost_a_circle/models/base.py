@@ -39,10 +39,10 @@ class Base:
         """saves a list of objects to a json file"""
         filename = "{}.json".format(cls.__name__)
         with open(filename, "w") as f:
-            if list_objs is None or list_objs == []:
-                f.write(cls.to_json_string([]))    
-            else:
-                f.write(cls.to_json_string([o.to_dictionary() for o in list_objs]))
+            temp_list = []
+            if list_objs is not None or list_objs != []:
+                temp_list = [o.to_dictionary() for o in list_objs]
+            f.write(cls.to_json_string(temp_list))
 
     @classmethod
     def create(cls, **dictionary):

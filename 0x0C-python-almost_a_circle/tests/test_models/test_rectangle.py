@@ -66,7 +66,7 @@ class TestRectCls(unittest.TestCase):
 
         y_err = "y must be >= 0"
         self.assertRaisesRegex(ValueError, y_err, Rectangle, 10, 10, 10, -10)
-        self.assertRaisesRegex(ValueError, y_err, Rectangle, 10, 10, 10, -100000)
+        self.assertRaisesRegex(ValueError, y_err, Rectangle, 1, 1, 1, -100000)
 
     def test_area(self):
         Base._Base__nb_objects = 0

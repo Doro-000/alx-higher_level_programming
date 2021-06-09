@@ -107,52 +107,51 @@ class TestRectCls(unittest.TestCase):
     def test_str(self):
         Base._Base__nb_objects = 0
         x = Rectangle(1, 1, 2, 2)
-        self.assertEqual(x.__str__(), "[Rectangle] 2/2 - 1/1")
+        self.assertEqual(x.__str__(), "[Rectangle] (1) 2/2 - 1/1")
 
         x = Rectangle(1, 1)
-        self.assertEqual(x.__str__(), "[Rectangle] 0/0 - 1/1")
+        self.assertEqual(x.__str__(), "[Rectangle] (2) 0/0 - 1/1")
 
         x = Rectangle(10000, 10000)
-        self.assertEqual(x.__str__(), "[Rectangle] 0/0 - 10000/10000")
+        self.assertEqual(x.__str__(), "[Rectangle] (3) 0/0 - 10000/10000")
 
     def test_args_update(self):
         Base._Base__nb_objects = 0
         x = Rectangle(1, 1, 2, 2)
 
         x.update(1, 10, 10, 20, 20)
-        self.assertEqual(x.__str__(), "[Rectangle] 20/20 - 10/10")
+        self.assertEqual(x.__str__(), "[Rectangle] (1) 20/20 - 10/10")
 
         x.update(1, 10, 10, 20, 20, 40, 50, 60)
-        self.assertEqual(x.__str__(), "[Rectangle] 20/20 - 10/10")
+        self.assertEqual(x.__str__(), "[Rectangle] (1) 20/20 - 10/10")
 
         x.update(10)
         self.assertEqual(x.id, 10)
 
         x.update(13, 10, 10, 20, 20)
-        self.assertEqual(x.id, 13)
-        self.assertEqual(x.__str__(), "[Rectangle] 20/20 - 10/10")
+        self.assertEqual(x.__str__(), "[Rectangle] (13) 20/20 - 10/10")
 
     def test_kwargs_update(self):
         Base._Base__nb_objects = 0
         x = Rectangle(1, 1, 2, 2)
 
         x.update(id=1, width=10, height=10, x=20, y=20)
-        self.assertEqual(x.__str__(), "[Rectangle] 20/20 - 10/10")
+        self.assertEqual(x.__str__(), "[Rectangle] (1) 20/20 - 10/10")
 
         x.update(id=1, width=10, height=10, x=20, y=20, chala=40)
-        self.assertEqual(x.__str__(), "[Rectangle] 20/20 - 10/10")
+        self.assertEqual(x.__str__(), "[Rectangle] (1) 20/20 - 10/10")
 
         x.update(id=10)
         self.assertEqual(x.id, 10)
 
         x.update(width=13, id=15, x=10, y=20, height=20)
         self.assertEqual(x.id, 15)
-        self.assertEqual(x.__str__(), "[Rectangle] 10/20 - 13/20")
+        self.assertEqual(x.__str__(), "[Rectangle] (15) 10/20 - 13/20")
 
         temp = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
         x.update(**temp)
         self.assertEqual(x.id, 1)
-        self.assertEqual(x.__str__(), "[Rectangle] 1/9 - 10/2")
+        self.assertEqual(x.__str__(), "[Rectangle] (1) 1/9 - 10/2")
 
     def test_args_kwargs_update(self):
         Base._Base__nb_objects = 0
@@ -162,24 +161,24 @@ class TestRectCls(unittest.TestCase):
         self.assertEqual(x.id, 20)
 
         x.update(1, 30, 40, width=10, height=10, x=20, y=20, chala=40)
-        self.assertEqual(x.__str__(), "[Rectangle] 20/20 - 30/40")
+        self.assertEqual(x.__str__(), "[Rectangle] (1) 2/2 - 30/40")
 
         x.update(id=10)
         self.assertEqual(x.id, 10)
 
         x.update(width=13, id=15, x=10, y=20, height=20)
         self.assertEqual(x.id, 15)
-        self.assertEqual(x.__str__(), "[Rectangle] 10/20 - 13/20")
+        self.assertEqual(x.__str__(), "[Rectangle] (15) 10/20 - 13/20")
 
         x.update(13, 10, 10, 20, 20)
         self.assertEqual(x.id, 13)
-        self.assertEqual(x.__str__(), "[Rectangle] 20/20 - 10/10")
+        self.assertEqual(x.__str__(), "[Rectangle] (13) 20/20 - 10/10")
 
         temp = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
         temp2 = [10, 20, 30, 40, 50]
         x.update(*temp2, **temp)
         self.assertEqual(x.id, 10)
-        self.assertEqual(x.__str__(), "[Rectangle] 40/50 - 20/30")
+        self.assertEqual(x.__str__(), "[Rectangle] (10) 40/50 - 20/30")
 
     def test_to_dict(self):
         Base._Base__nb_objects = 0

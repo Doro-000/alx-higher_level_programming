@@ -50,18 +50,23 @@ class TestRectCls(unittest.TestCase):
 
     def test_attrs_value_validation(self):
         Base._Base__nb_objects = 0
-        self.assertRaisesRegex(ValueError, "width must be > 0", Rectangle, -20, 20)
-        self.assertRaisesRegex(ValueError, "width must be > 0", Rectangle, 0, 20)
-        self.assertRaisesRegex(ValueError, "width must be > 0", Rectangle, -20000000, 20)
+        w_err = "width must be > 0"
+        self.assertRaisesRegex(ValueError, w_err, Rectangle, -20, 20)
+        self.assertRaisesRegex(ValueError, w_err, Rectangle, 0, 20)
+        self.assertRaisesRegex(ValueError, w_err, Rectangle, -20000000, 20)
 
-        self.assertRaisesRegex(ValueError, "height must be > 0", Rectangle, 20, -20)
-        self.assertRaisesRegex(ValueError, "height must be > 0", Rectangle, 20, 0)
-        self.assertRaisesRegex(ValueError, "height must be > 0", Rectangle, 20, -20000000)
+        h_err = "height must be > 0"
+        self.assertRaisesRegex(ValueError, h_err, Rectangle, 20, -20)
+        self.assertRaisesRegex(ValueError, h_err, Rectangle, 20, 0)
+        self.assertRaisesRegex(ValueError, h_err, Rectangle, 20, -20000000)
 
-        self.assertRaisesRegex(ValueError, "x must be >= 0", Rectangle, 10, 10, -10)
-        self.assertRaisesRegex(ValueError, "x must be >= 0", Rectangle, 10, 10, -100000)
-        self.assertRaisesRegex(ValueError, "y must be >= 0", Rectangle, 10, 10, 10, -10)
-        self.assertRaisesRegex(ValueError, "y must be >= 0", Rectangle, 10, 10, 10, -100000)
+        x_err = "x must be >= 0"
+        self.assertRaisesRegex(ValueError, x_err, Rectangle, 10, 10, -10)
+        self.assertRaisesRegex(ValueError, x_err, Rectangle, 10, 10, -100000)
+
+        y_err = "y must be >= 0"
+        self.assertRaisesRegex(ValueError, y_err, Rectangle, 10, 10, 10, -10)
+        self.assertRaisesRegex(ValueError, y_err, Rectangle, 10, 10, 10, -100000)
 
     def test_area(self):
         Base._Base__nb_objects = 0

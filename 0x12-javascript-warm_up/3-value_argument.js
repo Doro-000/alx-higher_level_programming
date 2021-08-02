@@ -1,8 +1,8 @@
 #!/usr/bin/node
-import { argv } from 'process';
+const { argv } = require('process');
 
-try {
-  console.log(argv[3]);
-} catch (error) {
+if (argv[3] === undefined) {
   console.log('No argument');
+} else {
+  console.log(argv[3]);
 }

@@ -8,13 +8,6 @@ if (argv.length <= 3) {
   for (let i = 2; i < argv.length; i++) {
     numbers.push(Number(argv[i]));
   }
-  let largest = numbers[0];
-  let secondLargest = numbers[0];
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > largest) {
-      secondLargest = largest;
-      largest = numbers[i];
-    }
-  }
-  console.log(secondLargest);
+  numbers.sort();
+  console.log(numbers[1]);
 }

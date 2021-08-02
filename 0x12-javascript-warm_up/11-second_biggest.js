@@ -14,9 +14,7 @@ if (argv.length <= 3) {
     if (numbers[i] > largest) {
       secondLargest = largest;
       largest = numbers[i];
-    }
-    else if (numbers[i] < largest && numbers[i] > seoncLargest)
-    {
+    } else if (numbers[i] < largest && numbers[i] > secondLargest)  {
       secondLargest = numbers[i];
     }
   }

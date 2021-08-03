@@ -1,7 +1,5 @@
 #!/usr/bin/node
-const ParentSquare = require('./5-Square.js');
-
-class Square extends ParentSquare {
+class Square extends require('./5-Square.js') {
   charPrint (c) {
     if (c === undefined) {
       this.print();

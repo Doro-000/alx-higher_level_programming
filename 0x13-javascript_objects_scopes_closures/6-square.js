@@ -1,5 +1,7 @@
 #!/usr/bin/node
-class Square extends require('./5-Square.js') {
+const asquare = require('./5-Square.js');
+
+class Square extends asquare.Square {
   charPrint (c) {
     if (c === undefined) {
       this.print();

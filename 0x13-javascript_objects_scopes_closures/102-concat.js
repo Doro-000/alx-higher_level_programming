@@ -8,11 +8,12 @@ open(argv[2], (err, fd) => {
   }
   read(fd, (err, bytes, buffer) => {
     if (err) {
+      close(fd);
       throw err;
     }
-    appendFileSync(argv[4], buffer);
-    close(fd);
+    appendFileSync(argv[4], buffer.slice(0, bytes));
   });
+  close(fd);
 });
 
 open(argv[3], (err, fd) => {
@@ -24,7 +25,7 @@ open(argv[3], (err, fd) => {
       close(fd);
       throw err;
     }
-    appendFileSync(argv[4], buffer);
-    close(fd);
+    appendFileSync(argv[4], buffer.slice(0, bytes));
   });
+  close(fd);
 });

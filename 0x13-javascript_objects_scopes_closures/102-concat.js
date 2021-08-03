@@ -1,50 +1,23 @@
 #!/usr/bin/node
 const { argv } = require('process');
-const { open, close, read, appendFileSync } = require('fs');
+const { readFile, appendFile } = require('fs');
 
-open(argv[2], 'r', (err, fd) => {
+readFile(argv[2], 'utf-8', (err, data) => {
   if (err) {
     throw err;
   }
-  read(fd, (err, bytes, buffer) => {
-    if (err) {
-      close(fd, (err) => {
-        if (err) {
-          throw err;
-        }
-      });
-      throw err;
-    }
-    appendFileSync(argv[4], buffer.toString().slice(0, bytes));
-  });
-  close(fd, (err) => {
+  appendFile(argv[4], data, 'utf-8', (err) => {
     if (err) {
       throw err;
     }
   });
 });
 
-open(argv[3], 'r', (err, fd) => {
+readFile(argv[3], 'utf-8', (err, data) => {
   if (err) {
-    close(fd, (err) => {
-      if (err) {
-        throw err;
-      }
-    });
     throw err;
   }
-  read(fd, (err, bytes, buffer) => {
-    if (err) {
-      close(fd, (err) => {
-        if (err) {
-          throw err;
-        }
-      });
-      throw err;
-    }
-    appendFileSync(argv[4], buffer.toString().slice(0, bytes));
-  });
-  close(fd, (err) => {
+  appendFile(argv[4], data, 'utf-8', (err) => {
     if (err) {
       throw err;
     }

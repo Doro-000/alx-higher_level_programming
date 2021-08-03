@@ -11,7 +11,7 @@ open(argv[2], (err, fd) => {
       close(fd);
       throw err;
     }
-    appendFileSync(argv[4], buffer.slice(0, bytes));
+    appendFileSync(argv[4], buffer.toString().slice(0, bytes));
   });
   close(fd);
 });
@@ -25,7 +25,7 @@ open(argv[3], (err, fd) => {
       close(fd);
       throw err;
     }
-    appendFileSync(argv[4], buffer.slice(0, bytes));
+    appendFileSync(argv[4], buffer.toString().slice(0, bytes));
   });
   close(fd);
 });

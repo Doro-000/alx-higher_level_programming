@@ -4,7 +4,7 @@ const asquare = require('./5-Square.js');
 class Square extends asquare {
   charPrint (c) {
     if (c === undefined) {
-      this.print();
+      super.print();
     } else {
       for (let i = 0; i < this.width; i++) {
         console.log(c.repeat(this.width));

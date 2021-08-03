@@ -2,7 +2,7 @@
 const { argv } = require('process');
 const { open, close, read, appendFileSync } = require('fs');
 
-open(argv[2], (err, fd) => {
+open(argv[2], 'r', (err, fd) => {
   if (err) {
     throw err;
   }
@@ -11,12 +11,12 @@ open(argv[2], (err, fd) => {
       close(fd);
       throw err;
     }
-    appendFileSync(argv[4], buffer.toString().slice(0, bytes) + '\n');
+    appendFileSync(argv[4], buffer.toString().slice(0, bytes));
   });
   close(fd);
 });
 
-open(argv[3], (err, fd) => {
+open(argv[3], 'r', (err, fd) => {
   if (err) {
     throw err;
   }

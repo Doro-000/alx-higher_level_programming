@@ -8,24 +8,45 @@ open(argv[2], 'r', (err, fd) => {
   }
   read(fd, (err, bytes, buffer) => {
     if (err) {
-      close(fd);
+      close(fd, (err) => {
+        if (err) {
+          throw err;
+        }
+      });
       throw err;
     }
     appendFileSync(argv[4], buffer.toString().slice(0, bytes));
   });
-  close(fd);
+  close(fd, (err) => {
+    if (err) {
+      throw err;
+    }
+  });
 });
 
 open(argv[3], 'r', (err, fd) => {
   if (err) {
+    close(fd, (err) => {
+      if (err) {
+        throw err;
+      }
+    });
     throw err;
   }
   read(fd, (err, bytes, buffer) => {
     if (err) {
-      close(fd);
+      close(fd, (err) => {
+        if (err) {
+          throw err;
+        }
+      });
       throw err;
     }
     appendFileSync(argv[4], buffer.toString().slice(0, bytes));
   });
-  close(fd);
+  close(fd, (err) => {
+    if (err) {
+      throw err;
+    }
+  });
 });

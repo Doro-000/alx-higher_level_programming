@@ -6,6 +6,7 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.sql.schema import ForeignKey
 from relationship_state import Base, State
 
+
 class City(Base):
     """class representing city Table"""
 

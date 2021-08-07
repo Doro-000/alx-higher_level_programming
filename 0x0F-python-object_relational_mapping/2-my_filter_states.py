@@ -8,10 +8,11 @@ if __name__ == "__main__":
     from sys import argv
 
     connection = MySQLdb.connect("localhost", argv[1], argv[2], argv[3])
+
     cursor = connection.cursor()
     command = """SELECT * FROM states
                  WHERE name = {}
-                 ORDER BY states.id ASC""".format(argv[4])
+                 ORDER BY states.id ASC""".format("'" + argv[4] + "'")
     cursor.execute(command)
     data = cursor.fetchall()
     for row in data:

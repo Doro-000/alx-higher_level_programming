@@ -15,7 +15,7 @@ if __name__ == "__main__":
     my_session = Session()
 
     try:
-        row = my_session.query(State).order_by(State.id)[0]
+        row = my_session.query(State).order_by(State.id).first()
         print("{}: {}".format(row.id, row.name))
     except:
         print("Nothing")

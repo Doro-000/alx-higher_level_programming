@@ -11,8 +11,8 @@ if __name__ == "__main__":
 
     cursor = connection.cursor()
     command = """SELECT * FROM states
-                 WHERE name = {}
-                 ORDER BY states.id ASC""".format("'" + argv[4] + "'")
+                 WHERE BINARY name = "{}"
+                 ORDER BY states.id ASC""".format(argv[4].strip("'"))
     cursor.execute(command)
     data = cursor.fetchall()
     for row in data:

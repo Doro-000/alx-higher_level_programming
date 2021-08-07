@@ -15,8 +15,8 @@ if __name__ == "__main__":
     my_session = Session()
 
     try:
-        row = my_session.query(State.id, State.name).order_by(State.id)[0]
+        row = my_session.query(State).order_by(State.id)[0]
         print("{}: {}".format(row.id, row.name))
-    except BaseException:
+    except:
         print("Nothing")
     my_session.close()

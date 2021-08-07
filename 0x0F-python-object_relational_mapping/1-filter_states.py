@@ -10,7 +10,7 @@ if __name__ == "__main__":
     connection = MySQLdb.connect("localhost", argv[1], argv[2], argv[3])
     cursor = connection.cursor()
     command = """SELECT * FROM states
-                 WHERE name REGEXP '^N'
+                 WHERE name REGEXP BINARY '^N'
                  ORDER BY states.id ASC"""
     cursor.execute(command)
     data = cursor.fetchall()

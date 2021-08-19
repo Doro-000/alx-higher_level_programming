@@ -22,4 +22,6 @@ def find_peak(list_of_integers):
 			else:
 				peak = list_of_integers[i]
 			i += 2
+		else:
+			i += 1
 	return peak

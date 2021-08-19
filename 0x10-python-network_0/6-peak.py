@@ -14,7 +14,5 @@ def find_peak(list_of_integers):
         avg_2 = sum(list_2) / len(list_2)
         if (avg_1 > avg_2):
             return find_peak(list_1)
-        elif (avg_1 < avg_2):
-            return find_peak(list_2)
         else:
-            return max(find_peak(list_1), find_peak(list_2))
+            return find_peak(list_2)

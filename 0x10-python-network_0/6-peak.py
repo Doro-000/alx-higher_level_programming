@@ -8,6 +8,8 @@ def find_peak(list_of_integers):
             return None
         if (len(list_of_integers) == 1):
             return list_of_integers[0]
+        if (len(list_of_integers) == 2):
+			return max(list_of_integers)
         list_1 = list_of_integers[0: len(list_of_integers) // 2]
         avg_1 = sum(list_1) / len(list_1)
         list_2 = list_of_integers[len(list_of_integers) // 2:]

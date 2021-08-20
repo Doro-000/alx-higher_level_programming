@@ -8,10 +8,13 @@ if __name__ == "__main__":
     url = "https://api.github.com/repos"
     owner = argv[2]
     repo = argv[1]
-    url = url + "/" + owner + "/" + repo + "/" + "commits"
+    url = url + "/" + owner + "/" + repo + "/commits"
     limit = {"per_page": 10}
     response = get(url, params=limit)
-    for commmit in response.json():
-        sha = commmit.get("sha")
-        author = commmit.get("author").get("name")
-        print("{}: {}".format(sha, author))
+    print(response.json())
+    for commit in response.json():
+        sha = commit.get("sha")
+        author = commit.get("author").get("name")
+        get_name = get("https://api.github.com/users/{}".format(author)).json()
+        name = get_name.get("name")
+        print("{}: {}".format(sha, name))

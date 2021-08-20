@@ -3,6 +3,6 @@
 displays the value of X-Request-Id in the header using requests"""
 from requests import get
 from sys import argv
-
-response = get(argv[1]).headers
-print(response.get("X-Request-Id"))
+if __name__ == "__main__":
+    response = get(argv[1]).headers
+    print(response.get("X-Request-Id"))

@@ -4,5 +4,6 @@ displays the value of X-Request-Id in the header"""
 from urllib import request
 from sys import argv
 
-with request.urlopen(argv[1]) as response:
-    print(response.getheader("X-Request-Id"))
+if __name__ == "__main__":
+    with request.urlopen(argv[1]) as response:
+        print(response.getheader("X-Request-Id"))

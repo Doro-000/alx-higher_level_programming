@@ -3,7 +3,8 @@
 from requests import get
 from sys import argv
 
-response = get(argv[1]).text
-print("Body response:")
-print("\t- type: {}".format(type(response)))
-print("\t- content: {}".format(response))
+if __name__ == "__main__":
+    response = get(argv[1]).text
+    print("Body response:")
+    print("\t- type: {}".format(type(response)))
+    print("\t- content: {}".format(response))

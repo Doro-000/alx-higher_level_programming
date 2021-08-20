@@ -13,5 +13,5 @@ if __name__ == "__main__":
     response = get(url, params=limit)
     for commmit in response.json():
         sha = commmit.get("sha")
-        author = commmit.get("author").get("login")
+        author = commmit.get("author").get("name")
         print("{}: {}".format(sha, author))

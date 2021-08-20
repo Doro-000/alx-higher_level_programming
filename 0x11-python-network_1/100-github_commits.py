@@ -14,4 +14,6 @@ if __name__ == "__main__":
     for commmit in response.json():
         sha = commmit.get("sha")
         author = commmit.get("author").get("login")
-        print("{}: {}".format(sha, author))
+        get_name = get("https://api.github.com/users/{}".format(author)).json()
+        name = get_name.get("name")
+        print("{}: {}".format(sha, name))

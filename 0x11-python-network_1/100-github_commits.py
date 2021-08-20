@@ -11,7 +11,6 @@ if __name__ == "__main__":
     url = url + "/" + owner + "/" + repo + "/commits"
     limit = {"per_page": 10}
     response = get(url, params=limit)
-    print(response.json())
     for commit in response.json():
         sha = commit.get("sha")
         author = commit.get("author").get("name")

@@ -9,7 +9,9 @@ if __name__ == "__main__":
     owner = argv[2]
     repo = argv[1]
     url = url + "/" + owner + "/" + repo + "/" + "commits"
-    limit = {"per_page":10}
+    limit = {"per_page": 10}
     response = get(url, params=limit)
     for commmit in response.json():
-        print("{}: {}".format(commmit.get("sha"), commmit.get("author").get("login")))
+        sha = commmit.get("sha")
+        author = commmit.get("author").get("login")
+        print("{}: {}".format(sha, author))

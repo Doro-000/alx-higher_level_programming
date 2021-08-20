@@ -13,7 +13,7 @@ if __name__ == "__main__":
     response = get(url, params=limit)
     for commit in response.json():
         sha = commit.get("sha")
-        author = commit.get("author").get("name")
+        author = commit.get("author").get("login")
         get_name = get("https://api.github.com/users/{}".format(author)).json()
         name = get_name.get("name")
         print("{}: {}".format(sha, name))

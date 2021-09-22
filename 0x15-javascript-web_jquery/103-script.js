@@ -10,5 +10,5 @@ $(function () {
     const InputLang = $('#language_code').val();
     ReplaceTranslation(InputLang);
   });
-  MyButton.keypress($('#language_code').val(), InputLang);
+  MyButton.keypress($('#language_code').val(), ReplaceTranslation);
 });
